@@ -13,27 +13,28 @@
   width: 200px;
 }
 
-.focusRow {
-  width: 100%;
+.focusColumn {
+  height: 320px;
 }
 
 .youtubeVideo {
-  width: 100%;
-  height: 300px;
+  height: 270px;
+  width: 480px;
   border: 8px solid var(--ifm-link-color);
-  box-shadow: 5px 3px 3px var(--ifm-color-primary);
+  box-shadow: 5px 3px 3px #99999999;
   border-radius: 8px;
+  margin-bottom: 44px;
 }
 
 .button {
   border: 2px solid var(--ifm-color-primary);
-  box-shadow: 10px 5px 5px var(--ifm-color-primary);
+  box-shadow: 10px 5px 5px #99999999;
   background-color: ghostwhite;
   height: 320px;
 }
 .button:hover {
   background-color: aliceblue;
-  box-shadow: 5px 3px 3px var(--ifm-color-primary);
+  box-shadow: 5px 3px 3px #99999999;
 }
 
 .darkText {

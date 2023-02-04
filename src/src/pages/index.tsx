@@ -34,14 +34,6 @@ export default function Home(): JSX.Element {
       <main>
         <div className={styles.indexContent}>
           <CurrentFocus />
-          <div className={clsx("row" + " text--center")}>
-            <a
-              href="/blog"
-              className={clsx("center" + " " + styles.myBlogLink)}
-            >
-              My Blog
-            </a>
-          </div>
         </div>
       </main>
       <div className={styles.paperOverlay} />
