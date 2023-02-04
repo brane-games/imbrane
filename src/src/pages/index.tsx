@@ -1,38 +1,51 @@
-import React from 'react';
-import clsx from 'clsx';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
-
-import styles from './index.module.css';
+import React from "react";
+import clsx from "clsx";
+import styles from "./index.module.css";
+import CurrentFocus from "../components/CurrentFocus";
 
 function HomepageHeader() {
-  const { siteConfig } = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
+    <header className={clsx("hero hero--primary", styles.heroBanner)}>
       <div className={"container " + styles.heroStuff}>
-        <h1 className={clsx('hero--title', styles.imbrane)}>
-          <img className={clsx('img--primary', styles.imgPrimary)} src="/img/imbrane.png" />
-        </h1>
-        <p>Аctually, my name is Milos and I make stuff I think are cool.</p>
+        <div style={{ margin: "auto" }}>
+          <h1 className={clsx("hero--title", styles.imbrane)}>
+            <img
+              className={clsx("img--primary", styles.imgPrimary)}
+              src="/img/imbrane.png"
+            />
+          </h1>
+          <h3>I make games.</h3>
+        </div>
         {/* <p>Right now, that's <span style={{ fontWeight: 600 }}>👑 Master Of Chess ⬅️.</span></p> */}
-        {/* <img className={clsx('img--primary', styles.imgPrimary)} src="/img/avatar.png" /> */}
-        <a href="/blog">My Blog</a><a>My Games</a>
+        <img
+          style={{ margin: "auto" }}
+          className={clsx("img--primary", styles.imgPrimary)}
+          src="/img/avatar.png"
+        />
       </div>
-
     </header>
   );
 }
 
 export default function Home(): JSX.Element {
-  const { siteConfig } = useDocusaurusContext();
   return (
     <div>
       <HomepageHeader />
       <main>
-        <HomepageFeatures />
+        <div className={styles.indexContent}>
+          <CurrentFocus />
+          <div className={clsx("row" + " text--center")}>
+            <a
+              href="/blog"
+              className={clsx("center" + " " + styles.myBlogLink)}
+            >
+              My Blog
+            </a>
+          </div>
+        </div>
       </main>
+      <div className={styles.paperOverlay} />
+      <div id="background" className={styles.hiddenBg} />
     </div>
   );
 }

@@ -1,0 +1,26 @@
+.hiddenBg {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  z-index: -1;
+  height: 3000px;
+  color: var(--ifm-heading-color);
+  background-color: var(--ifm-color-primary-dark);
+  background-image: url("https://img.itch.zone/aW1nLzEwNTczOTUwLnBuZw==/original/Cl0Af%2B.png");
+}
+
+.centralAlign {
+  text-align: left;
+  background-color: #3c4540df;
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content {
+  padding: 20px;
+}
+
+h1 {
+  color: var(--ifm-link-color);
+}
