@@ -15,6 +15,7 @@ function HomepageHeader() {
             />
           </h1>
           <h3>I make games.</h3>
+          <a href="/blog">My blog</a>
         </div>
         {/* <p>Right now, that's <span style={{ fontWeight: 600 }}>👑 Master Of Chess ⬅️.</span></p> */}
         <img

@@ -4,9 +4,9 @@ import styles from "./styles.module.css";
 
 export default function CurrentFocus(): JSX.Element {
   const MasterOfChessIconUrl =
-    require("@site/static/img/master_of_chess_icon.png").default;
+    require("@site/static/img/master_of_chess/master_of_chess_icon.png").default;
 
-  const BookIcon = require("@site/static/img/book.svg").default;
+  const DetailsIcon = require("@site/static/img/details_icon.svg").default;
   const SteamIconLogo = require("@site/static/img/Steam_icon_logo.svg").default;
 
   return (
@@ -26,67 +26,86 @@ export default function CurrentFocus(): JSX.Element {
                 className={"text--center padding-horiz--md " + styles.focusDesc}
               >
                 <h1 className={styles.darkText}>Master of Chess</h1>
-                <p>
+                <p
+                  style={{
+                    maxWidth: "500px",
+                    margin: "auto",
+                    paddingBottom: "12px",
+                  }}
+                >
                   My current project is a chess player simulation game. You take
                   control over one chess prodigy and guide him to chess
                   greatness.
                 </p>
               </div>
-            </div>
-            <button
-              style={{ margin: "auto", marginTop: "20px", height: "90px" }}
-              className={styles.button}
-            >
-              <div className="row">
-                <BookIcon style={{ height: "64px" }} role="img" />
-                <h1
-                  className={styles.darkText}
-                  style={{ margin: "auto", marginRight: "30px" }}
+              <div
+                style={{
+                  width: "200px",
+                  margin: "auto",
+                  display: "flex",
+                  flexDirection: "column",
+                  paddingRight: "16px",
+                }}
+              >
+                <a
+                  href="https://store.steampowered.com/app/2248900/Master_of_Chess"
+                  target={"_blank"}
                 >
-                  Blog
-                </h1>
+                  <button
+                    style={{ margin: "auto", marginTop: "0px", height: "70px" }}
+                    className={styles.button}
+                  >
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        margin: "auto",
+                        width: "130px",
+                      }}
+                    >
+                      <SteamIconLogo
+                        style={{
+                          height: "40px",
+                        }}
+                        role="img"
+                      />
+                      <span style={{ margin: "auto" }}>Wishlist</span>
+                    </div>
+                  </button>
+                </a>
+                <button
+                  style={{ margin: "auto", marginTop: "0px", height: "70px" }}
+                  className={styles.button}
+                  onClick={() => {
+                    (window as any).location =
+                      window.location + "master-of-chess";
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      margin: "auto",
+                      width: "130px",
+                    }}
+                  >
+                    <DetailsIcon
+                      style={{
+                        height: "40px",
+                      }}
+                      role="img"
+                    />
+                    <span style={{ margin: "auto" }}>Details</span>
+                  </div>
+                </button>
               </div>
-            </button>
+            </div>
           </div>
           <div className={clsx("col col--6") + " text--center"}>
             <iframe
               className={styles.youtubeVideo}
-              src="https://www.youtube.com/embed/tgbNymZ7vqY"
+              src="https://www.youtube.com/embed/YXlsOy9k1po"
             ></iframe>
-            <button
-              style={{ margin: "auto", marginTop: "20px", height: "90px" }}
-              className={styles.button}
-            >
-              <div className="row">
-                <SteamIconLogo
-                  style={{
-                    height: "64px",
-                    margin: "12px",
-                    marginLeft: "30px",
-                    marginRight: "30px",
-                  }}
-                  role="img"
-                />
-                <h1
-                  className={styles.darkText}
-                  style={{ margin: "auto", marginRight: "30px" }}
-                >
-                  Wishlist
-                </h1>
-              </div>
-            </button>
-            {/* <a
-              target="_blank"
-              href="https://store.steampowered.com/app/2248900/Master_of_Chess?from=imbrane"
-              className={styles.button}
-            >
-              <div className="text--center">
-                <SteamIconLogo className={styles.featureSvg} role="img" />
-              </div>
-              <div className="text--center padding-horiz--md">
-                <p></p>
-              </div>
-            </a> */}
           </div>
         </div>
       </div>

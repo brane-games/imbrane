@@ -8,11 +8,19 @@ const gameData = {
 
 export default function Home(): JSX.Element {
   const MasterOfChessBannerUrl =
-    require("@site/static/img/master_of_chess_banner.jpg").default;
+    require("@site/static/img/master_of_chess/master_of_chess_banner.jpg").default;
   const MasterOfChessSmallBannerUrl =
-    require("@site/static/img/small_capsule.png").default;
+    require("@site/static/img/master_of_chess/small_capsule.png").default;
   const MasterOfChessIconUrl =
-    require("@site/static/img/master_of_chess_icon.png").default;
+    require("@site/static/img/master_of_chess/master_of_chess_icon.png").default;
+  const MatchScreenshotUrl =
+    require("@site/static/img/master_of_chess/Match3.png").default;
+  const ProgressScreenshotUrl =
+    require("@site/static/img/master_of_chess/Progress.png").default;
+  const OpeningsUrl =
+    require("@site/static/img/master_of_chess/Openings2.png").default;
+  const CampaignsUrl =
+    require("@site/static/img/master_of_chess/Campaigns.png").default;
   const BRANEIconUrl = require("@site/static/img/BRANE.png").default;
   return (
     <div className={styles.centralAlign}>
@@ -24,17 +32,17 @@ export default function Home(): JSX.Element {
       />
       <div className={styles.content}>
         <h1>Description</h1>
-        <p>
+        <span>
           <b>Master of Chess</b> is a sports simulation game in which you guide
           a young prodigy from his early days to chess greatness. You develop
           the skills of your player, enter chess tournaments worldwide, analyze
           and expand your opening repertoire. <br /> <br />
           You slowly climb the ratings ladder with one goal in mind:
           <i> becoming the best chess player in the world!</i>
-        </p>
+        </span>
 
         <h1>Factsheet</h1>
-        <p>
+        <span>
           <ul>
             <li>
               <b>Developer: </b> BRANE
@@ -57,41 +65,51 @@ export default function Home(): JSX.Element {
             </li>
           </ul>
           <h1>Video Trailer</h1>
-          <p>
-            <b>Master of Chess</b> is a sports mangement game in which you guide
-            a young prodigy from his early days to chess greatness. You develop
-            the skills of your player, enter chess tournaments worldwide,
-            analyze and expand your opening repertoire. <br /> <br />
-            You slowly climb the ratings ladder with one goal in mind:
-            <i> becoming the best chess player in the world!</i>
-          </p>
+          <iframe
+            className={styles.youtubeVideo}
+            src="https://www.youtube.com/embed/YXlsOy9k1po"
+          ></iframe>
           <h1>Screenshots</h1>
-          <div style={{ display: "flex" }}>
-            <img
-              style={{ margin: "auto" }}
-              src={MasterOfChessIconUrl}
-              alt="Master of chess icon"
-            ></img>
-            <img
-              style={{ margin: "auto" }}
-              src={MasterOfChessSmallBannerUrl}
-              alt="Master of chess icon"
-            ></img>
-            <img
-              style={{ margin: "auto" }}
-              src={BRANEIconUrl}
-              alt="Master of chess icon"
-            ></img>
+          <div style={{ display: "flex", maxWidth: "100%" }}>
+            <div>
+              <img
+                style={{ margin: "auto" }}
+                src={MatchScreenshotUrl}
+                alt="Match Screenshot"
+              ></img>
+            </div>
+            <div>
+              <img
+                style={{ margin: "auto" }}
+                src={ProgressScreenshotUrl}
+                alt="Progress Screnshoot"
+              ></img>
+            </div>
           </div>
-
+          <div style={{ display: "flex", maxWidth: "100%" }}>
+            <div>
+              <img
+                style={{ margin: "auto" }}
+                src={OpeningsUrl}
+                alt="Openings Screenshot"
+              ></img>
+            </div>
+            <div>
+              <img
+                style={{ margin: "auto" }}
+                src={CampaignsUrl}
+                alt="Campaigns Screenshot"
+              ></img>
+            </div>
+          </div>
           <h1>About developer</h1>
-          <p>
+          <span>
             <b>BRANE</b> is online pseudonym of Miloš, a game/software developer
             from Bosnia and Herzegovina, currently living and working in
             Germany. With some award winning game jam games and a lot more
             semi-finished nothing winning games on his portfolio he is the solo
             developer of the exciting chess management game - Master of Chess.
-          </p>
+          </span>
           <h1>Logos</h1>
           <div style={{ display: "flex" }}>
             <img
@@ -110,7 +128,7 @@ export default function Home(): JSX.Element {
               alt="Master of chess icon"
             ></img>
           </div>
-        </p>
+        </span>
       </div>
     </div>
   );
