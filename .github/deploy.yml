@@ -1,0 +1,48 @@
+name: Website build & deploy
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  build_and_publish_prod:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v2
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.PROD_RBAC_AZURE }}
+      - name: Install npm packages
+        shell: bash
+        run: |
+          cd $GITHUB_WORKSPACE/src
+          npm install
+      - name: Build app
+        shell: bash
+        run: |
+          cd $GITHUB_WORKSPACE/src
+          npm run build
+
+      - name: Upload app
+        uses: actions/upload-artifact@v2
+        with:
+          name: app
+          path: src/build
+
+      - name: Publish app
+        uses: Azure/cli@v1.0.0
+        with:
+          azcliversion: latest
+          inlineScript: |
+            az storage blob upload-batch -s $GITHUB_WORKSPACE/src/build -d \$web --account-name brane --overwrite true
+      - name: Purge CDN
+        run: az cdn endpoint purge -n imbrane-prod-endpoint --profile-name cdnimbraneprod --content-paths "/*" --resource-group rg-imbrane-prod --no-wait
+
+      # Azure logout
+      - name: logout
+        run: |
+          az logout
+        if: always()

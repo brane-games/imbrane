@@ -14,7 +14,7 @@ It's time for my blog.
 
 I'm not sure what will end up here, but I aim to document my struggle and journey from your average gamedev to still an average gamedev that has a game released on Steam:
 
-https://store.steampowered.com/app/2248900/Master_of_Chess/
+https://store.steampowered.com/app/2248900/Master_of_Chess
 
 ![Master of Chess](./header_capsule.png)
 

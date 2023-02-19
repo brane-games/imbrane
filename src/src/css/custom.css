@@ -43,4 +43,16 @@
 }
 a {
   color: var(--ifm-color-primary-dark);
+  font-weight: bold;
+}
+.navbar__toggle {
+  color: var(--ifm-link-color);
+  margin-right: 20px;
+}
+
+.footer__title {
+  font-size: larger;
+}
+.menu__link {
+  color: var(--ifm-link-color);
 }
