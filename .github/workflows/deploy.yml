@@ -2,6 +2,8 @@ name: Website build & deploy
 
 on:
   push:
+    paths:
+      - "src/**"
     branches: [master]
   workflow_dispatch:
 
@@ -39,7 +41,7 @@ jobs:
           inlineScript: |
             az storage blob upload-batch -s $GITHUB_WORKSPACE/src/build -d \$web --account-name imbranewebsiteprod --overwrite true
       - name: Purge CDN
-        run: az cdn endpoint purge -n imbrane-prod-endpoint --profile-name cdnimbraneprod --content-paths "/*" --resource-group rg-imbrane-prod --no-wait
+        run: az cdn endpoint purge -n imbrane --profile-name imbrane-prod-endpoint --content-paths "/*" --resource-group rg-imbrane-prod --no-wait --subscription "d135f102-1145-4490-9146-89d3282488da"
 
       # Azure logout
       - name: logout
