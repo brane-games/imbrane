@@ -15,7 +15,7 @@
   --ifm-color-primary-lightest: #3cad6e;
   --ifm-heading-color: #e9ebec;
   --ifm-footer-background-color: var(--ifm-color-primary-dark);
-  --ifm-link-color: #d1c6ac;
+  --ifm-link-color: #e1c984;
   --ifm-navbar-link-hover-color: var(--ifm-link-color);
   --ifm-navbar-background-color: var(--ifm-color-primary-dark);
   --ifm-code-font-size: 95%;
@@ -28,10 +28,10 @@
 }
 
 .container {
-  background-color: var(--ifm-color-primary);
+  background-color: var(--ifm-heading-color);
 }
 .main-wrapper {
-  background-color: var(--ifm-color-primary);
+  background-color: var(--ifm-heading-color);
 }
 
 .container-fluid {
@@ -40,4 +40,7 @@
 
 .footer--dark {
   background-color: var(--ifm-color-primary-dark);
+}
+a {
+  color: var(--ifm-color-primary-dark);
 }

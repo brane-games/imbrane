@@ -2,6 +2,7 @@ import React from "react";
 import clsx from "clsx";
 import styles from "./index.module.css";
 import CurrentFocus from "../components/CurrentFocus";
+import { BookIcon } from "../components/Icons/BookIcon";
 
 function HomepageHeader() {
   return (
@@ -15,7 +16,12 @@ function HomepageHeader() {
             />
           </h1>
           <h3>I make games.</h3>
-          <a href="/blog">My blog</a>
+          <a className={styles.myBlogLink} href="/blog">
+            <BookIcon width="40px" color={"var(--ifm-heading-color)"} />
+            <span style={{ marginLeft: "16px", marginBottom: "8px" }}>
+              My blog
+            </span>
+          </a>
         </div>
         {/* <p>Right now, that's <span style={{ fontWeight: 600 }}>👑 Master Of Chess ⬅️.</span></p> */}
         <img

@@ -1,12 +1,11 @@
 import React from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
+import { DetailsIcon } from "../Icons/DetailsIcon";
 
 export default function CurrentFocus(): JSX.Element {
   const MasterOfChessIconUrl =
     require("@site/static/img/master_of_chess/master_of_chess_icon.png").default;
-
-  const DetailsIcon = require("@site/static/img/details_icon.svg").default;
   const SteamIconLogo = require("@site/static/img/Steam_icon_logo.svg").default;
 
   return (
@@ -95,7 +94,9 @@ export default function CurrentFocus(): JSX.Element {
                       }}
                       role="img"
                     />
-                    <span style={{ margin: "auto" }}>Details</span>
+                    <span style={{ margin: "auto", marginLeft: "8px" }}>
+                      Presskit
+                    </span>
                   </div>
                 </button>
               </div>

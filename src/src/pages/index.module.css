@@ -65,18 +65,23 @@
 }
 
 .myBlogLink {
-  color: var(--ifm-color-primary);
-  font-weight: 800;
-  border: 2px solid var(--ifm-color-primary);
-  box-shadow: 10px 5px 5px var(--ifm-color-primary);
-  background-color: ghostwhite;
-  padding: 20px;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-top: 6px;
+  display: flex;
+  flex-direction: row;
+  font-size: larger;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  color: var(--ifm-heading-color);
+  border: 1px solid;
+  margin: auto;
+  margin-top: 50px;
+  width: 200px;
 }
 .myBlogLink:hover {
-  background-color: aliceblue;
-  box-shadow: 5px 3px 3px var(--ifm-color-primary);
+  color: var(--ifm-heading-color);
+  text-decoration: none;
+  background-color: #ffffff11;
 }
 
 .indexContent {
