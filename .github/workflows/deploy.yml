@@ -37,7 +37,7 @@ jobs:
         with:
           azcliversion: latest
           inlineScript: |
-            az storage blob upload-batch -s $GITHUB_WORKSPACE/src/build -d \$web --account-name brane --overwrite true
+            az storage blob upload-batch -s $GITHUB_WORKSPACE/src/build -d \$web --account-name imbranewebsiteprod --overwrite true
       - name: Purge CDN
         run: az cdn endpoint purge -n imbrane-prod-endpoint --profile-name cdnimbraneprod --content-paths "/*" --resource-group rg-imbrane-prod --no-wait
 
