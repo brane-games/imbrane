@@ -12,7 +12,7 @@ export const BookIcon = (props: any) => {
         width={props.width}
         height={props.width}
         viewBox="0 0 128 128"
-        enable-background="new 0 0 128 128"
+        enableBackground="new 0 0 128 128"
       >
         <path
           fill={props.color}
