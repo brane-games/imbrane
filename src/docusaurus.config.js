@@ -98,7 +98,7 @@ const config = {
               },
               {
                 label: "Reddit",
-                href: "https://twitter.com/branegames22",
+                href: "https://www.reddit.com/user/branegames22",
               },
             ],
           },
