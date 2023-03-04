@@ -1,2 +1,3 @@
 # imbrane
-Docusaurus static page as my personal webpage
+
+Docusaurus static page deployed to https://www.imbrane.com/
