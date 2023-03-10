@@ -1,0 +1,7 @@
+.codeArea {
+  min-height: 399px;
+  min-width: 300px;
+  width: 500px;
+  max-height: 400px;
+  overflow: scroll;
+}

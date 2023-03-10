@@ -1,11 +1,6 @@
 import React from "react";
 import styles from "./master-of-chess.module.css";
 
-const gameData = {
-  description:
-    "Octodad: Dadliest Catch is a game about destruction, deception, and fatherhood. The player controls Octodad, a dapper octopus masquerading as a human, as he goes about his life. Octodad's existence is a constant struggle, as he must master mundane tasks with his unwieldy boneless tentacles while simultaneously keeping his cephalopodan nature a secret from his human family.",
-};
-
 export default function Home(): JSX.Element {
   const MasterOfChessBannerUrl =
     require("@site/static/img/master_of_chess/master_of_chess_banner.jpg").default;
