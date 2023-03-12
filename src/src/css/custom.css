@@ -6,6 +6,7 @@
 @import url("highlight.js/styles/agate.css");
 /* You can override the default Infima variables here. */
 :root {
+  --ifm-color-content-secondary: #99aaaa !important;
   --ifm-color-primary: #1d171c;
   --ifm-font-color-base: var(--ifm-color-primary);
   --ifm-color-primary-dark: #687a68;
@@ -56,4 +57,18 @@ a {
 }
 .menu__link {
   color: var(--ifm-link-color);
+}
+h1,
+h2,
+h3,
+h4 {
+  color: var(--ifm-color-primary-dark) !important;
+}
+.table-of-contents__link--active {
+  color: var(--ifm-color-primary-dark) !important;
+  font-weight: 700 !important;
+}
+.table-of-contents__link {
+  color: #99aaaa;
+  font-weight: 400;
 }

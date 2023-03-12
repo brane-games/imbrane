@@ -30,38 +30,42 @@ export default function GdscriptCsharpConverter(): JSX.Element {
   }, [gdscript]);
 
   useEffect(() => {
-    console.log("highlighting!", document.querySelector("#csharp"));
     hljs.highlightElement(document.querySelector("#csharp")!);
   }, [csharpCode]);
 
   return (
-    <div className="row" style={{ margin: "auto" }}>
-      <div className={styles.card}>
-        <h2>Paste C# code</h2>
-        <textarea
-          id="csharp"
-          className={"language-csharp " + styles.codeArea}
-          onChange={(ev) => setCsharpCode(ev.target.value)}
-          value={csharpCode}
-        ></textarea>
-      </div>
-      <button
-        style={{
-          height: "30px",
-          margin: "auto",
-          marginLeft: "12px",
-          marginRight: "12px",
-        }}
-        onClick={convert}
-      >
-        Convert ={">"}
-      </button>
-      <div className="card">
-        <h2>GDScript output</h2>
-        <pre className={styles.codeArea}>
-          <code className={"language-haxe"}>{gdscript}</code>
-        </pre>
-        <button onClick={copyToClipboard}>Copy content</button>
+    <div style={{ margin: "auto" }}>
+      <h1 style={{ textAlign: "center", marginBottom: "64px" }}>
+        CSharp to GDScript DTO converter
+      </h1>
+      <div className="row" style={{ margin: "auto" }}>
+        <div className={styles.card}>
+          <h2>Paste C# class here</h2>
+          <textarea
+            id="csharp"
+            className={"language-csharp " + styles.codeArea}
+            onChange={(ev) => setCsharpCode(ev.target.value)}
+            value={csharpCode}
+          ></textarea>
+        </div>
+        <button
+          style={{
+            height: "30px",
+            margin: "auto",
+            marginLeft: "12px",
+            marginRight: "12px",
+          }}
+          onClick={convert}
+        >
+          Convert ={">"}
+        </button>
+        <div className="card">
+          <h2 style={{ margin: "8px" }}>GDScript output</h2>
+          <pre className={styles.codeArea}>
+            <code className={"language-haxe"}>{gdscript}</code>
+          </pre>
+          <button onClick={copyToClipboard}>Copy content</button>
+        </div>
       </div>
     </div>
   );
@@ -88,7 +92,7 @@ function parseCSharpClass(csharpClassDefinition: string): any {
 function convertToGDScriptClass(csharpClass: any): string {
   const { className, properties } = csharpClass;
 
-  let gdscriptClassDefinition = `@class_name ${className}\n\n`;
+  let gdscriptClassDefinition = `class_name ${className}\n\n`;
 
   for (const property of properties) {
     const { accessModifier, type, name } = property;
