@@ -77,7 +77,8 @@ function parseCSharpClass(csharpClassDefinition: string): any {
   const classNameMatch = csharpClassDefinition.match(classNameRegex);
   const className = classNameMatch ? classNameMatch[1].trim() : "";
 
-  const propertyRegex = /(public|private|protected)?\s*(\w+)\s+(\w+)\s*\{.*\}/g;
+  const propertyRegex =
+    /(public|private|protected)?\s*(\w+)?\??\s+(\w+)\s*\{.*\}/g;
   const properties = [];
 
   let match;
@@ -127,6 +128,18 @@ function convertTypeToGDScript(csharpType: string): string {
     case "double":
       return "float";
     case "string":
+      return "String";
+    case "Nullable<bool>":
+      return "bool";
+    case "Nullable<byte>":
+    case "Nullable<short>":
+    case "Nullable<int>":
+    case "Nullable<long>":
+      return "int";
+    case "Nullable<float>":
+    case "Nullable<double>":
+      return "float";
+    case "Nullable<string>":
       return "String";
     default:
       return "Object";
