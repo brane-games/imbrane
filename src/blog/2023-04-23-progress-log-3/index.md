@@ -42,4 +42,4 @@ It now seems there's a great probability someone will have fun with it! I got lo
 
 # What's next?
 
-As mentioned, I am basically addressing issues that were found during playtests, some were obvious mistakes, some I am still not sure how to solve. They are mostly related to the way chess matches are played. Then the only remaining things to solve are some usability fixes and it's ready for public demo!
+As mentioned, I am basically addressing issues that were found during playtests, some were obvious mistakes, some I am still not sure how to solve. They are mostly related to the way chess matches are played. Then the only remaining things to solve are some usability issues and it's ready for public demo!
