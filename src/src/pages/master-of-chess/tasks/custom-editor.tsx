@@ -9,7 +9,7 @@ export interface RowValueChange {
   value: string;
 }
 
-export const CustomEditor: React.FC<
+const CustomEditor: React.FC<
   ICellEditorProps & { saveRow: (data: RowValueChange) => void }
 > = ({ column, rowKeyValue, dispatch, value, saveRow }) => {
   const close = () => {
@@ -48,3 +48,5 @@ export const CustomEditor: React.FC<
     </div>
   );
 };
+
+export default CustomEditor;

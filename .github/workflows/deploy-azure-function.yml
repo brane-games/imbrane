@@ -22,7 +22,7 @@ jobs:
       - name: "Login via Azure CLI"
         uses: azure/login@v1
         with:
-          creds: ${{ secrets.DEV_RBAC_AZURE }}
+          creds: ${{ secrets.PROD_RBAC_AZURE }}
 
       - name: Setup Node ${{ env.NODE_VERSION }} Environment
         uses: actions/setup-node@v1

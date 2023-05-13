@@ -4,7 +4,7 @@ import "ka-table/style.css";
 
 import { DataType, Table } from "ka-table";
 import { EditingMode, SortingMode } from "ka-table/enums";
-import { CustomEditor, RowValueChange } from "./custom-editor";
+import CustomEditor, { RowValueChange } from "./custom-editor";
 
 const CustomAttributesDemo: React.FC = () => {
   const [data, setData] = useState<Array<GameTask>>();
