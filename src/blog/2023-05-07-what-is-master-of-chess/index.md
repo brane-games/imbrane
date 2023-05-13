@@ -51,6 +51,6 @@ _All the matches in Master of Chess:_
 
 These are the main pillars of the chess match experience.
 
-On top of this the game then builds **tournaments**, **opening repertoire development**, getting chess titles, **solving chess puzzles** for faster improvement, getting prize money, having chess coaches and bunch of random events that happen throughout the game.
+On top of this the game then builds **tournaments**, **opening repertoire development**, getting chess titles, **solving chess puzzles** for faster improvement, getting prize money, having chess coaches and bunch of random events that happen throughout the game. You guide your player character through the chess world.
 
 I think it's cool, and I enjoy developing it. Next week I plan to open up a demo to all the folks in Discord. If you're interested, join here: https://discord.gg/HYV8Zz8V2Q
