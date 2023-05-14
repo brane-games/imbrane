@@ -14,7 +14,9 @@ const CustomAttributesDemo: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:7071/api/GetTasks");
+        const response = await fetch(
+          "https://task-reports-function.azurewebsites.net/api/GetTasks"
+        );
         const res = await response.json();
         setData(res);
       } catch (error) {
@@ -54,7 +56,7 @@ const CustomAttributesDemo: React.FC = () => {
     const changedRow = data.find((obj) => obj.rowKey == change.rowKeyValue);
     changedRow[change.changedValueKey] = change.value;
 
-    fetch("http://localhost:7071/api/UpdateTasks", {
+    fetch("https://task-reports-function.azurewebsites.net/api/UpdateTasks", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
