@@ -118,102 +118,107 @@ const CustomAttributesDemo: React.FC = () => {
       {!data ? (
         <div>Loading ... </div>
       ) : (
-        <Table
-          columns={[
-            {
-              key: "title",
-              title: "Title",
-              dataType: DataType.String,
-              filterRowOperator: ">",
-            },
-            {
-              key: "description",
-              title: "Description",
-              dataType: DataType.String,
-              filterRowOperator: ">",
-            },
-            {
-              key: "priority",
-              title: "Priority",
-              dataType: DataType.String,
-              filterRowOperator: ">",
-            },
-            {
-              key: "status",
-              title: "Status",
-              dataType: DataType.String,
-              filterRowOperator: ">",
-            },
-            {
-              key: "type",
-              title: "Type",
-              dataType: DataType.String,
-              filterRowOperator: ">",
-            },
-            {
-              key: "reporterName",
-              title: "Reporter",
-              dataType: DataType.String,
-              filterRowOperator: ">",
-            },
-            {
-              key: "dateReported",
-              title: "Date Reported",
-              dataType: DataType.Date,
-              filterRowOperator: "<",
-            },
-          ]}
-          format={({ column, value }) => {
-            if (column.dataType === DataType.Date) {
-              return (
-                value &&
-                value.toLocaleDateString("en", {
-                  month: "2-digit",
-                  day: "2-digit",
-                  year: "numeric",
-                })
-              );
-            }
-          }}
-          paging={{
-            enabled: false,
-            pageSize: 30,
-            pageIndex: 0,
-          }}
-          data={data}
-          rowKeyField={"rowKey"}
-          sortingMode={SortingMode.Single}
-          editingMode={
-            isEditMode && password.length > 10
-              ? EditingMode.Cell
-              : EditingMode.None
-          }
-          childComponents={{
-            dataRow: {
-              elementAttributes: ({ rowData }) => ({
-                style: {
-                  backgroundColor:
-                    rowData.status == "Completed"
-                      ? "rgba(0, 255, 0, 0.1)"
-                      : rowData.priority == "High"
-                      ? "rgba(255, 0, 0, 0.1)"
-                      : rowData.priority == "Medium"
-                      ? "rgba(225, 20, 20, 0.1)"
-                      : "rgba(100, 150, 150, 0.2)",
-                },
-                title: `${rowData.name}: ${rowData.score}`,
-              }),
-            },
-            cellEditor: {
-              content: (props) => {
-                switch (props.column.key) {
-                  default:
-                    return <CustomEditor {...props} saveRow={saveRow} />;
-                }
+        <div className={styles.kaTable}>
+          <Table
+            columns={[
+              {
+                key: "title",
+                title: "Title",
+                dataType: DataType.String,
+                filterRowOperator: ">",
               },
-            },
-          }}
-        />
+              {
+                key: "description",
+                title: "Description",
+                dataType: DataType.String,
+                filterRowOperator: ">",
+              },
+              {
+                key: "priority",
+                title: "Priority",
+                dataType: DataType.String,
+                filterRowOperator: ">",
+              },
+              {
+                key: "status",
+                title: "Status",
+                dataType: DataType.String,
+                filterRowOperator: ">",
+              },
+              {
+                key: "type",
+                title: "Type",
+                dataType: DataType.String,
+                filterRowOperator: ">",
+              },
+              {
+                key: "reporterName",
+                title: "Reporter",
+                dataType: DataType.String,
+                filterRowOperator: ">",
+              },
+              {
+                key: "dateReported",
+                title: "Date Reported",
+                dataType: DataType.Date,
+                filterRowOperator: "<",
+              },
+            ]}
+            format={({ column, value }) => {
+              if (column.dataType === DataType.Date) {
+                return (
+                  value &&
+                  value.toLocaleDateString("en", {
+                    month: "2-digit",
+                    day: "2-digit",
+                    year: "numeric",
+                  })
+                );
+              }
+              if (column.key == "description" && !isEditMode) {
+                return <DescriptionButton value={value} />;
+              }
+            }}
+            paging={{
+              enabled: false,
+              pageSize: 30,
+              pageIndex: 0,
+            }}
+            data={data}
+            rowKeyField={"rowKey"}
+            sortingMode={SortingMode.Single}
+            editingMode={
+              isEditMode && password.length > 10
+                ? EditingMode.Cell
+                : EditingMode.None
+            }
+            childComponents={{
+              dataRow: {
+                elementAttributes: ({ rowData, rowKeyField }) => ({
+                  style: {
+                    backgroundColor:
+                      rowData.status == "Completed"
+                        ? "#e0ffd4"
+                        : rowData.priority == "High"
+                        ? "#b8565a"
+                        : rowData.priority == "Medium"
+                        ? "#e0b1b0"
+                        : "#ede1b5",
+                  },
+                  title: `${rowData.name}: ${rowData.score}`,
+                }),
+              },
+              cellEditor: {
+                content: (props) => {
+                  switch (props.column.key) {
+                    default:
+                      return <CustomEditor {...props} saveRow={saveRow} />;
+                  }
+                },
+              },
+            }}
+          />
+        </div>
       )}
     </div>
   );
@@ -254,3 +259,28 @@ enum TaskStatus {
   Completed = "Completed",
   Deployed = "Deployed",
 }
+
+const DescriptionButton: React.FC<any> = ({ value }) => {
+  const [isOpened, setIsOpened] = useState(false);
+  return (
+    <div>
+      <button onClick={() => setIsOpened(true)} className={styles.button}>
+        Details
+      </button>
+
+      {isOpened && (
+        <div className={styles.modalContainer}>
+          <div className={styles.modalContent}>
+            <div className={styles.modalText}>{value}</div>
+            <button
+              onClick={() => setIsOpened(false)}
+              className={styles.closeButton}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
