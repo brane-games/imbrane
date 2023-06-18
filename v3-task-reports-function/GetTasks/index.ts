@@ -12,14 +12,14 @@ const httpTrigger: AzureFunction = async function (
     "masterOfChess"
   );
 
-  const entitiesIter = client.listEntities<any>();
-  var entities: any[] = [];
+  const entitiesIter = client.listEntities<GameTask>();
+  var entities: GameTask[] = [];
   for await (const entity of entitiesIter) {
     entities.push(entity);
   }
-
+  
   context.res = {
-    body: entities,
+    body: entities.sort((a, b) => new Date(a.dateReported).getTime() - new Date(b.dateReported).getTime())
   };
 };
 

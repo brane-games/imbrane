@@ -28,13 +28,7 @@ export default function Home(): JSX.Element {
       <div className={styles.content}>
         <h1>Description</h1>
         <span>
-          <b>Master of Chess</b> is a chess player management game in which you
-          guide a young prodigy from his first tournaments to chess greatness.
-          Develop the skills of your player, play and win exciting matches,
-          enter tournaments worldwide, expand your openings repertoire, earn
-          chess titles and... blunder occasionally! <br /> <br />
-          You slowly climb the ratings ladder with one goal in mind:
-          <b> becoming the best chess player in the world!</b>
+          <b>Master of Chess</b> is a first & only chess career simulation game. Compete against the world’s best players, join tournaments world-wide, conquer grandmaster-rated AI opponents, solve tactical puzzles to accelerate your development, create a powerful opening repertoire and… blunder occasionally - it’s part of the game!
         </span>
 
         <h1>Factsheet</h1>
@@ -44,10 +38,10 @@ export default function Home(): JSX.Element {
               <b>Developer: </b> BRANE
             </li>
             <li>
-              <b>Release Date: </b> 2023, Q2
+              <b>Release Date: </b> 2023, Q4
             </li>
             <li>
-              <b>Genre: </b> Management, Chess, Simulation
+              <b>Genre: </b> Chess, Simulation, Management
             </li>
             <li>
               <b>Platforms: </b> Windows and Linux

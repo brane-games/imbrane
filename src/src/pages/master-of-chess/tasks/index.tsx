@@ -7,9 +7,32 @@ import { EditingMode, SortingMode } from "ka-table/enums";
 import CustomEditor, { RowValueChange } from "./custom-editor";
 
 const CustomAttributesDemo: React.FC = () => {
-  const [data, setData] = useState<Array<GameTask>>();
+  const [data, setData] = useState<Array<GameTask>>([]);
   const [isEditMode, setIsEditMode] = useState(false);
   const [password, setPassword] = useState("");
+  const [completed, setCompleted] = useState(false);
+  const [inProgress, setInProgress] = useState(true);
+  const [open, setOpen] = useState(true);
+  const [tasksToShow, setTasksToShow] = useState([]); // Filtered tasks to show
+
+
+  useEffect(()=>{
+    const filteredTasks = data.filter((task) => {
+      if (completed && task.status.includes('Completed')) {
+        return true;
+      }
+      if (inProgress && task.status.includes('Progress')) {
+        return true;
+      }
+      if (open && task.status.includes("Open")) {
+        return true;
+      }
+      return false;
+    });
+
+    // Update tasksToShow state
+    setTasksToShow(filteredTasks);
+  }, [completed, inProgress, open, data])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,6 +42,7 @@ const CustomAttributesDemo: React.FC = () => {
         );
         const res = await response.json();
         setData(res);
+        setOpen(true)
       } catch (error) {
         console.error("Error:", error);
       }
@@ -73,10 +97,24 @@ const CustomAttributesDemo: React.FC = () => {
     <div className={styles.centralAlign}>
       <div className={styles.hiddenBg}></div>
       <img role="img" src={MasterOfChessBannerUrl} />
-      <div>
-        <br />
-        All the bugs, improvements and suggestions end up here.
-        <br />
+      <div style={{padding:"12px"}}>
+        All bugs, suggestions and features from community end up here.
+        <div className={styles.checkboxContainer}>
+          <label>
+            <input type="checkbox" checked={completed} onChange={e => setCompleted(e.target.checked)} />
+            Completed
+          </label>
+          <br />
+          <label>
+            <input type="checkbox" checked={inProgress} onChange={e => setInProgress(e.target.checked)} />
+            In Progress
+          </label>
+          <br />
+          <label>
+            <input type="checkbox" checked={open} onChange={e => setOpen(e.target.checked)} />
+            Open
+          </label>
+        </div>
         <br />
         {isEditMode && (
           <>
@@ -91,9 +129,8 @@ const CustomAttributesDemo: React.FC = () => {
                   setData((d) =>
                     d.concat([
                       {
-                        rowKey: `${
-                          Math.max(...d.map((obj) => parseInt(obj.rowKey))) + 1
-                        }`,
+                        rowKey: `${Math.max(...d.map((obj) => parseInt(obj.rowKey))) + 1
+                          }`,
                         partitionKey: "preview",
                         title: "Bug",
                         comments: "",
@@ -115,8 +152,8 @@ const CustomAttributesDemo: React.FC = () => {
           </>
         )}
       </div>
-      {!data ? (
-        <div>Loading ... </div>
+      {!data.length ? (
+        <div style={{padding: "32px", fontWeight: 800, left: "50%", textAlign:"center"}}>Loading ... </div>
       ) : (
         <div className={styles.kaTable}>
           <Table
@@ -184,7 +221,7 @@ const CustomAttributesDemo: React.FC = () => {
               pageSize: 30,
               pageIndex: 0,
             }}
-            data={data}
+            data={tasksToShow}
             rowKeyField={"rowKey"}
             sortingMode={SortingMode.Single}
             editingMode={
@@ -196,14 +233,15 @@ const CustomAttributesDemo: React.FC = () => {
               dataRow: {
                 elementAttributes: ({ rowData, rowKeyField }) => ({
                   style: {
+                    fontWeight: rowData.priority == "High" ? 600 : 400,
                     backgroundColor:
                       rowData.status == "Completed"
                         ? "#e0ffd4"
                         : rowData.priority == "High"
-                        ? "#b8565a"
-                        : rowData.priority == "Medium"
-                        ? "#e0b1b0"
-                        : "#ede1b5",
+                          ? "#c7b6a2"
+                          : rowData.priority == "Medium"
+                            ? "#edede3"
+                            : "#d1deb2",
                   },
                   title: `${rowData.name}: ${rowData.score}`,
                 }),
