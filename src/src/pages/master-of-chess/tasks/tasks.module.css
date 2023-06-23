@@ -20,11 +20,18 @@
 }
 
 .button {
-  padding: 10px 20px;
-  background-color: #8193ae;
-  color: white;
-  border: none;
+  padding: 4px 8px;
+  background-color: #bac580;
+  border-color: #5f6e5f11;
+  border-width: 1px;
+  color: #697335;
+  font-weight: 600;
   border-radius: 4px;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: #bacf80;
+  box-shadow: 5px 3px 3px #bac580;
   cursor: pointer;
 }
 
@@ -42,9 +49,10 @@
 }
 
 .modalContent {
-  background-color: #fff;
+  background-color: #edede3;
   padding: 20px;
   border-radius: 4px;
+  color: #4b3a30;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   position: relative;
 }
@@ -53,17 +61,6 @@
   margin-bottom: 20px;
   margin-top: 20px;
   max-width: 400px;
-}
-
-.closeButton {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  padding: 5px 10px;
-  background-color: #ccc;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
 }
 
 .checkboxContainer {

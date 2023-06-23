@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import styles from "./tasks.module.css";
 import "ka-table/style.css";
-
+import { FiAlignLeft, FiLink } from "react-icons/fi";
 import { DataType, Table } from "ka-table";
 import { EditingMode, SortingMode } from "ka-table/enums";
 import CustomEditor, { RowValueChange } from "./custom-editor";
+import {useLocation} from '@docusaurus/router';
 
 const CustomAttributesDemo: React.FC = () => {
+  const location = useLocation();
+  const selectedRow = location.search.includes("row") ? parseInt(location.search.substring(5)) : 0;
   const [data, setData] = useState<Array<GameTask>>([]);
   const [isEditMode, setIsEditMode] = useState(false);
   const [password, setPassword] = useState("");
@@ -15,9 +18,8 @@ const CustomAttributesDemo: React.FC = () => {
   const [open, setOpen] = useState(true);
   const [tasksToShow, setTasksToShow] = useState([]); // Filtered tasks to show
 
-
-  useEffect(()=>{
-    const filteredTasks = data.filter((task) => {
+  useEffect(() => {
+    const filteredTasks = data?.filter((task) => {
       if (completed && task.status.includes('Completed')) {
         return true;
       }
@@ -31,7 +33,7 @@ const CustomAttributesDemo: React.FC = () => {
     });
 
     // Update tasksToShow state
-    setTasksToShow(filteredTasks);
+    setTasksToShow(filteredTasks ?? []);
   }, [completed, inProgress, open, data])
 
   useEffect(() => {
@@ -41,7 +43,7 @@ const CustomAttributesDemo: React.FC = () => {
           "https://task-reports-function.azurewebsites.net/api/GetTasks"
         );
         const res = await response.json();
-        setData(res);
+        setData(res ?? []);
         setOpen(true)
       } catch (error) {
         console.error("Error:", error);
@@ -97,7 +99,7 @@ const CustomAttributesDemo: React.FC = () => {
     <div className={styles.centralAlign}>
       <div className={styles.hiddenBg}></div>
       <img role="img" src={MasterOfChessBannerUrl} />
-      <div style={{padding:"12px"}}>
+      <div style={{ padding: "12px" }}>
         All bugs, suggestions and features from community end up here.
         <div className={styles.checkboxContainer}>
           <label>
@@ -152,55 +154,12 @@ const CustomAttributesDemo: React.FC = () => {
           </>
         )}
       </div>
-      {!data.length ? (
-        <div style={{padding: "32px", fontWeight: 800, left: "50%", textAlign:"center"}}>Loading ... </div>
+      {!data?.length ? (
+        <div style={{ padding: "32px", fontWeight: 800, left: "50%", textAlign: "center" }}>Loading ... </div>
       ) : (
         <div className={styles.kaTable}>
           <Table
-            columns={[
-              {
-                key: "title",
-                title: "Title",
-                dataType: DataType.String,
-                filterRowOperator: ">",
-              },
-              {
-                key: "description",
-                title: "Description",
-                dataType: DataType.String,
-                filterRowOperator: ">",
-              },
-              {
-                key: "priority",
-                title: "Priority",
-                dataType: DataType.String,
-                filterRowOperator: ">",
-              },
-              {
-                key: "status",
-                title: "Status",
-                dataType: DataType.String,
-                filterRowOperator: ">",
-              },
-              {
-                key: "type",
-                title: "Type",
-                dataType: DataType.String,
-                filterRowOperator: ">",
-              },
-              {
-                key: "reporterName",
-                title: "Reporter",
-                dataType: DataType.String,
-                filterRowOperator: ">",
-              },
-              {
-                key: "dateReported",
-                title: "Date Reported",
-                dataType: DataType.Date,
-                filterRowOperator: "<",
-              },
-            ]}
+            columns={columns}
             format={({ column, value }) => {
               if (column.dataType === DataType.Date) {
                 return (
@@ -214,6 +173,13 @@ const CustomAttributesDemo: React.FC = () => {
               }
               if (column.key == "description" && !isEditMode) {
                 return <DescriptionButton value={value} />;
+              }
+              if (column.key == "rowKey") {
+                return <button className={styles.button} onClick={() => {
+                  navigator.clipboard.writeText(window.location.href.split("?")[0] + "?row=" + value);
+                  alert("Link copied!");
+                }
+                }><FiLink size={"22px"} /></button>;
               }
             }}
             paging={{
@@ -234,6 +200,7 @@ const CustomAttributesDemo: React.FC = () => {
                 elementAttributes: ({ rowData, rowKeyField }) => ({
                   style: {
                     fontWeight: rowData.priority == "High" ? 600 : 400,
+                    borderColor: rowData.rowKey == selectedRow ?  "red" : "#54413a",
                     backgroundColor:
                       rowData.status == "Completed"
                         ? "#e0ffd4"
@@ -298,27 +265,79 @@ enum TaskStatus {
   Deployed = "Deployed",
 }
 
-const DescriptionButton: React.FC<any> = ({ value }) => {
+const DescriptionButton: React.FC<any> = ({ value, rowKey }) => {
   const [isOpened, setIsOpened] = useState(false);
+
   return (
     <div>
       <button onClick={() => setIsOpened(true)} className={styles.button}>
-        Details
+        <FiAlignLeft size={"24px"} />
       </button>
 
       {isOpened && (
         <div className={styles.modalContainer}>
           <div className={styles.modalContent}>
             <div className={styles.modalText}>{value}</div>
-            <button
-              onClick={() => setIsOpened(false)}
-              className={styles.closeButton}
-            >
-              Close
-            </button>
+            <div style={{ width: "100%" }}>
+              <button
+                onClick={() => setIsOpened(false)}
+              >
+                Close
+              </button>
+            </div>
           </div>
         </div>
       )}
     </div>
   );
 };
+
+const columns = [
+  {
+    key: 'rowKey',
+    title: 'Copy Link',
+    dataType: DataType.String,
+  },
+  {
+    key: "title",
+    title: "Title",
+    dataType: DataType.String,
+    filterRowOperator: ">",
+  },
+  {
+    key: "description",
+    title: "Desc.",
+    dataType: DataType.String,
+    filterRowOperator: ">",
+  },
+  {
+    key: "priority",
+    title: "Priority",
+    dataType: DataType.String,
+    filterRowOperator: ">",
+  },
+  {
+    key: "status",
+    title: "Status",
+    dataType: DataType.String,
+    filterRowOperator: ">",
+  },
+  {
+    key: "type",
+    title: "Type",
+    dataType: DataType.String,
+    filterRowOperator: ">",
+  },
+  {
+    key: "reporterName",
+    title: "Reporter",
+    dataType: DataType.String,
+    filterRowOperator: ">",
+  },
+  {
+    key: "dateReported",
+    title: "Date Reported",
+    dataType: DataType.Date,
+    filterRowOperator: "<",
+  },
+]

@@ -17,7 +17,7 @@ const httpTrigger: AzureFunction = async function (
   for await (const entity of entitiesIter) {
     entities.push(entity);
   }
-  
+
   context.res = {
     body: entities.sort((a, b) => new Date(a.dateReported).getTime() - new Date(b.dateReported).getTime())
   };
