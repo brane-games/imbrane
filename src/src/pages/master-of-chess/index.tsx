@@ -9,13 +9,17 @@ export default function Home(): JSX.Element {
   const MasterOfChessIconUrl =
     require("@site/static/img/master_of_chess/master_of_chess_icon.png").default;
   const MatchScreenshotUrl =
-    require("@site/static/img/master_of_chess/Match3.png").default;
-  const ProgressScreenshotUrl =
-    require("@site/static/img/master_of_chess/Progress.png").default;
+    "https://img.itch.zone/aW1hZ2UvMTgwMDAyMC8xMjUyNTAzMC5wbmc=/original/z3HXs9.png";
   const OpeningsUrl =
-    require("@site/static/img/master_of_chess/Openings2.png").default;
+    "https://img.itch.zone/aW1hZ2UvMTgwMDAyMC8xMjUyNTAzNC5wbmc=/original/7AhOqt.png";
   const CampaignsUrl =
-    require("@site/static/img/master_of_chess/Campaigns.png").default;
+    "https://img.itch.zone/aW1hZ2UvMTgwMDAyMC8xMjUyNTAzMi5wbmc=/original/FpEpMj.png";
+  const tournamentsUrl =
+    "https://img.itch.zone/aW1hZ2UvMTgwMDAyMC8xMjUyNTAzMy5wbmc=/original/RvWaD5.png";
+  const createPlayerUrl =
+    "https://img.itch.zone/aW1hZ2UvMTgwMDAyMC8xMjc5Njk2Ni5wbmc=/original/48W1GC.png";
+  const puzzlesUrl =
+    "https://img.itch.zone/aW1hZ2UvMTgwMDAyMC8xMjUyNTAzMS5wbmc=/original/O5GlvZ.png";
   const BRANEIconUrl = require("@site/static/img/BRANE.png").default;
   return (
     <div className={styles.centralAlign}>
@@ -28,7 +32,11 @@ export default function Home(): JSX.Element {
       <div className={styles.content}>
         <h1>Description</h1>
         <span>
-          <b>Master of Chess</b> is a first & only chess career simulation game. Compete against the world’s best players, join tournaments world-wide, conquer grandmaster-rated AI opponents, solve tactical puzzles to accelerate your development, create a powerful opening repertoire and… blunder occasionally - it’s part of the game!
+          <b>Master of Chess</b> is a first & only chess career simulation game.
+          Compete against the world’s best players, join tournaments world-wide,
+          conquer grandmaster-rated AI opponents, solve tactical puzzles to
+          accelerate your development, create a powerful opening repertoire and…
+          blunder occasionally - it’s part of the game!
         </span>
 
         <h1>Factsheet</h1>
@@ -50,58 +58,82 @@ export default function Home(): JSX.Element {
               <b>Availability: </b>
               {"  "}
               <a href="https://store.steampowered.com/app/2248900/Master_of_Chess">
-                <b>{"  STEAM"}</b>
+                <b>{"  Steam"}</b>
+              </a>
+              <span> /</span>
+              <a href="https://branegames.itch.io/master-of-chess">
+                <b>{"  Itch.io"}</b>
               </a>
             </li>
           </ul>
           <h1>Video Trailer</h1>
           <iframe
             className={styles.youtubeVideo}
-            src="https://www.youtube.com/embed/YXlsOy9k1po"
+            src="https://www.youtube.com/embed/Pn2WeNB9b90"
           ></iframe>
           <h1>Screenshots</h1>
           <div style={{ display: "flex", maxWidth: "100%" }}>
             <div>
-              <img
-                style={{ margin: "auto" }}
-                src={MatchScreenshotUrl}
-                alt="Match Screenshot"
-              ></img>
+              <a href={MatchScreenshotUrl} target="_blank">
+                <img
+                  style={{ margin: "auto" }}
+                  src={MatchScreenshotUrl}
+                  alt="Match Screenshot"
+                ></img>
+              </a>
             </div>
             <div>
-              <img
-                style={{ margin: "auto" }}
-                src={ProgressScreenshotUrl}
-                alt="Progress Screnshoot"
-              ></img>
+              <a href={OpeningsUrl} target="_blank">
+                <img
+                  style={{ margin: "auto" }}
+                  src={OpeningsUrl}
+                  alt="Openings Screenshot"
+                ></img>
+              </a>
             </div>
           </div>
           <div style={{ display: "flex", maxWidth: "100%" }}>
             <div>
-              <img
-                style={{ margin: "auto" }}
-                src={OpeningsUrl}
-                alt="Openings Screenshot"
-              ></img>
+              <a href={tournamentsUrl} target="_blank">
+                <img
+                  style={{ margin: "auto" }}
+                  src={tournamentsUrl}
+                  alt="Tournaments Screenshot"
+                ></img>
+              </a>
             </div>
             <div>
-              <img
-                style={{ margin: "auto" }}
-                src={CampaignsUrl}
-                alt="Campaigns Screenshot"
-              ></img>
+              <a href={CampaignsUrl} target="_blank">
+                <img
+                  style={{ margin: "auto" }}
+                  src={CampaignsUrl}
+                  alt="Campaigns Screenshot"
+                ></img>
+              </a>
+            </div>
+          </div>
+          <div style={{ display: "flex", width: "100%" }}>
+            <div style={{ margin: "auto", width: "50%" }}>
+              <a href={createPlayerUrl} target="_blank">
+                <img src={createPlayerUrl} alt="Create Player Screenshot"></img>
+              </a>
+            </div>
+            <div style={{ margin: "auto", width: "50%" }}>
+              <a href={puzzlesUrl} target="_blank">
+                <img src={puzzlesUrl} alt="Puzzles Screenshot"></img>
+              </a>
             </div>
           </div>
           <h1>About developer</h1>
           <span>
-            <b>BRANE</b> is online pseudonym of Miloš, a game/software developer
-            from Bosnia and Herzegovina, currently living and working in
-            Germany. With some award winning game jam games and a lot more
-            semi-finished nothing winning games on his portfolio he is the solo
-            developer of the exciting chess management game - Master of Chess.
+            <b>BRANE</b> is online pseudonym of Miloš, a game developer from
+            Bosnia and Herzegovina, currently living and working in Germany.
+            With some award winning game jam games and a lot more semi-finished
+            nothing winning games on his portfolio he is the solo developer of
+            the exciting chess management game - Master of Chess.
           </span>
-          <h1>Logos</h1>
-          <div style={{ display: "flex" }}>
+          <h1>Assets</h1>
+          <div style={{ display: "flex", flexWrap: "wrap" }}>
             <img
               style={{ margin: "auto" }}
               src={MasterOfChessIconUrl}
@@ -117,7 +149,38 @@ export default function Home(): JSX.Element {
               src={BRANEIconUrl}
               alt="Master of chess icon"
             ></img>
+            <img
+              style={{ margin: "auto" }}
+              src={
+                require("@site/static/img/master_of_chess/title2.png").default
+              }
+              alt="Master of chess title 2"
+            ></img>
+            <img
+              style={{ margin: "auto" }}
+              src={
+                require("@site/static/img/master_of_chess/title1.png").default
+              }
+              alt="Master of chess title 1"
+            ></img>
+            <img
+              style={{ margin: "auto" }}
+              src={
+                require("@site/static/img/master_of_chess/master.png").default
+              }
+              alt="Master of chess"
+            ></img>
+            <img
+              style={{ margin: "auto" }}
+              src={require("@site/static/img/master_of_chess/bg.png").default}
+              alt="background"
+            ></img>
           </div>
+          <h1>Fonts used</h1>
+          <span>Paralives</span>
+          <br />
+          <span>Mr Dafoe</span>
+          <p>Montserrat</p>
         </span>
       </div>
     </div>

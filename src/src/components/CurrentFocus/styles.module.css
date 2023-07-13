@@ -48,7 +48,7 @@
 }
 
 .darkText {
-  color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary) !important;
   padding-top: 0px !important;
 }
 

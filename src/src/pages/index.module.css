@@ -2,6 +2,7 @@
  * CSS files with the .module.css suffix will be treated as CSS modules
  * and scoped locally.
  */
+
 .hiddenBg {
   position: fixed;
   width: 100%;
@@ -72,7 +73,7 @@
   font-weight: bold;
   align-items: center;
   justify-content: center;
-  color: var(--ifm-heading-color);
+  color: var(--ifm-heading-color) !important;
   border: 1px solid;
   margin: auto;
   margin-top: 50px;

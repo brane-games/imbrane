@@ -32,9 +32,8 @@ export default function CurrentFocus(): JSX.Element {
                     paddingBottom: "12px",
                   }}
                 >
-                  My current project is a chess player simulation game. You take
-                  control over one chess prodigy and guide him to chess
-                  greatness.
+                  I am currently working on my dream chess career simulation
+                  game.
                 </p>
               </div>
               <div
