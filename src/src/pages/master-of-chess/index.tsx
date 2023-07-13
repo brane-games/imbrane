@@ -3,7 +3,7 @@ import styles from "./master-of-chess.module.css";
 
 export default function Home(): JSX.Element {
   const MasterOfChessBannerUrl =
-    require("@site/static/img/master_of_chess/master_of_chess_banner.jpg").default;
+    require("@site/static/img/master_of_chess/banner.png").default;
   const MasterOfChessSmallBannerUrl =
     require("@site/static/img/master_of_chess/small_capsule.png").default;
   const MasterOfChessIconUrl =
@@ -173,6 +173,13 @@ export default function Home(): JSX.Element {
             <img
               style={{ margin: "auto" }}
               src={require("@site/static/img/master_of_chess/bg.png").default}
+              alt="background"
+            ></img>
+            <img
+              style={{ margin: "auto" }}
+              src={
+                require("@site/static/img/master_of_chess/banner.png").default
+              }
               alt="background"
             ></img>
           </div>

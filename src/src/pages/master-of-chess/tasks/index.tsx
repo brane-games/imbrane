@@ -5,11 +5,13 @@ import { FiAlignLeft, FiLink } from "react-icons/fi";
 import { DataType, Table } from "ka-table";
 import { EditingMode, SortingMode } from "ka-table/enums";
 import CustomEditor, { RowValueChange } from "./custom-editor";
-import {useLocation} from '@docusaurus/router';
+import { useLocation } from "@docusaurus/router";
 
 const CustomAttributesDemo: React.FC = () => {
   const location = useLocation();
-  const selectedRow = location.search.includes("row") ? parseInt(location.search.substring(5)) : 0;
+  const selectedRow = location.search.includes("row")
+    ? parseInt(location.search.substring(5))
+    : 0;
   const [data, setData] = useState<Array<GameTask>>([]);
   const [isEditMode, setIsEditMode] = useState(false);
   const [password, setPassword] = useState("");
@@ -20,10 +22,10 @@ const CustomAttributesDemo: React.FC = () => {
 
   useEffect(() => {
     const filteredTasks = data?.filter((task) => {
-      if (completed && task.status.includes('Completed')) {
+      if (completed && task.status.includes("Completed")) {
         return true;
       }
-      if (inProgress && task.status.includes('Progress')) {
+      if (inProgress && task.status.includes("Progress")) {
         return true;
       }
       if (open && task.status.includes("Open")) {
@@ -34,7 +36,7 @@ const CustomAttributesDemo: React.FC = () => {
 
     // Update tasksToShow state
     setTasksToShow(filteredTasks ?? []);
-  }, [completed, inProgress, open, data])
+  }, [completed, inProgress, open, data]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -44,7 +46,7 @@ const CustomAttributesDemo: React.FC = () => {
         );
         const res = await response.json();
         setData(res ?? []);
-        setOpen(true)
+        setOpen(true);
       } catch (error) {
         console.error("Error:", error);
       }
@@ -93,7 +95,7 @@ const CustomAttributesDemo: React.FC = () => {
   };
 
   const MasterOfChessBannerUrl =
-    require("@site/static/img/master_of_chess/master_of_chess_banner.jpg").default;
+    require("@site/static/img/master_of_chess/banner.png").default;
 
   return (
     <div className={styles.centralAlign}>
@@ -103,17 +105,29 @@ const CustomAttributesDemo: React.FC = () => {
         All bugs, suggestions and features from community end up here.
         <div className={styles.checkboxContainer}>
           <label>
-            <input type="checkbox" checked={completed} onChange={e => setCompleted(e.target.checked)} />
+            <input
+              type="checkbox"
+              checked={completed}
+              onChange={(e) => setCompleted(e.target.checked)}
+            />
             Completed
           </label>
           <br />
           <label>
-            <input type="checkbox" checked={inProgress} onChange={e => setInProgress(e.target.checked)} />
+            <input
+              type="checkbox"
+              checked={inProgress}
+              onChange={(e) => setInProgress(e.target.checked)}
+            />
             In Progress
           </label>
           <br />
           <label>
-            <input type="checkbox" checked={open} onChange={e => setOpen(e.target.checked)} />
+            <input
+              type="checkbox"
+              checked={open}
+              onChange={(e) => setOpen(e.target.checked)}
+            />
             Open
           </label>
         </div>
@@ -131,8 +145,9 @@ const CustomAttributesDemo: React.FC = () => {
                   setData((d) =>
                     d.concat([
                       {
-                        rowKey: `${Math.max(...d.map((obj) => parseInt(obj.rowKey))) + 1
-                          }`,
+                        rowKey: `${
+                          Math.max(...d.map((obj) => parseInt(obj.rowKey))) + 1
+                        }`,
                         partitionKey: "preview",
                         title: "Bug",
                         comments: "",
@@ -155,7 +170,16 @@ const CustomAttributesDemo: React.FC = () => {
         )}
       </div>
       {!data?.length ? (
-        <div style={{ padding: "32px", fontWeight: 800, left: "50%", textAlign: "center" }}>Loading ... </div>
+        <div
+          style={{
+            padding: "32px",
+            fontWeight: 800,
+            left: "50%",
+            textAlign: "center",
+          }}
+        >
+          Loading ...{" "}
+        </div>
       ) : (
         <div className={styles.kaTable}>
           <Table
@@ -175,11 +199,19 @@ const CustomAttributesDemo: React.FC = () => {
                 return <DescriptionButton value={value} />;
               }
               if (column.key == "rowKey") {
-                return <button className={styles.button} onClick={() => {
-                  navigator.clipboard.writeText(window.location.href.split("?")[0] + "?row=" + value);
-                  alert("Link copied!");
-                }
-                }><FiLink size={"22px"} /></button>;
+                return (
+                  <button
+                    className={styles.button}
+                    onClick={() => {
+                      navigator.clipboard.writeText(
+                        window.location.href.split("?")[0] + "?row=" + value
+                      );
+                      alert("Link copied!");
+                    }}
+                  >
+                    <FiLink size={"22px"} />
+                  </button>
+                );
               }
             }}
             paging={{
@@ -200,15 +232,16 @@ const CustomAttributesDemo: React.FC = () => {
                 elementAttributes: ({ rowData, rowKeyField }) => ({
                   style: {
                     fontWeight: rowData.priority == "High" ? 600 : 400,
-                    borderColor: rowData.rowKey == selectedRow ?  "red" : "#54413a",
+                    borderColor:
+                      rowData.rowKey == selectedRow ? "red" : "#54413a",
                     backgroundColor:
                       rowData.status == "Completed"
                         ? "#e0ffd4"
                         : rowData.priority == "High"
-                          ? "#c7b6a2"
-                          : rowData.priority == "Medium"
-                            ? "#edede3"
-                            : "#d1deb2",
+                        ? "#c7b6a2"
+                        : rowData.priority == "Medium"
+                        ? "#edede3"
+                        : "#d1deb2",
                   },
                   title: `${rowData.name}: ${rowData.score}`,
                 }),
@@ -279,11 +312,7 @@ const DescriptionButton: React.FC<any> = ({ value, rowKey }) => {
           <div className={styles.modalContent}>
             <div className={styles.modalText}>{value}</div>
             <div style={{ width: "100%" }}>
-              <button
-                onClick={() => setIsOpened(false)}
-              >
-                Close
-              </button>
+              <button onClick={() => setIsOpened(false)}>Close</button>
             </div>
           </div>
         </div>
@@ -294,8 +323,8 @@ const DescriptionButton: React.FC<any> = ({ value, rowKey }) => {
 
 const columns = [
   {
-    key: 'rowKey',
-    title: 'Copy Link',
+    key: "rowKey",
+    title: "Copy Link",
     dataType: DataType.String,
   },
   {
@@ -340,4 +369,4 @@ const columns = [
     dataType: DataType.Date,
     filterRowOperator: "<",
   },
-]
+];
