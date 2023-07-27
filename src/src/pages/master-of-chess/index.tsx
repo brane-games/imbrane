@@ -184,7 +184,7 @@ export default function Home(): JSX.Element {
             ></img>
           </div>
           <h1>Fonts used</h1>
-          <span>Paralives</span>
+          <span>Paralines</span>
           <br />
           <span>Mr Dafoe</span>
           <p>Montserrat</p>
