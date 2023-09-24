@@ -95,7 +95,7 @@ const CustomAttributesDemo: React.FC = () => {
   };
 
   const MasterOfChessBannerUrl =
-    require("@site/static/img/master_of_chess/banner.png").default;
+    require("@site/static/img/master_of_chess/banner.jpg").default;
 
   return (
     <div className={styles.centralAlign}>

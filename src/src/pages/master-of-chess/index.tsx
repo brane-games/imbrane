@@ -3,23 +3,23 @@ import styles from "./master-of-chess.module.css";
 
 export default function Home(): JSX.Element {
   const MasterOfChessBannerUrl =
-    require("@site/static/img/master_of_chess/banner.png").default;
+    require("@site/static/img/master_of_chess/banner.jpg").default;
   const MasterOfChessSmallBannerUrl =
     require("@site/static/img/master_of_chess/small_capsule.png").default;
   const MasterOfChessIconUrl =
     require("@site/static/img/master_of_chess/master_of_chess_icon.png").default;
   const MatchScreenshotUrl =
-    "https://img.itch.zone/aW1hZ2UvMTgwMDAyMC8xMjUyNTAzMC5wbmc=/original/z3HXs9.png";
+    "https://img.itch.zone/aW1hZ2UvMTgwMDAyMC8xMzM3NDA4NS5wbmc=/794x1000/MoJz95.png";
   const OpeningsUrl =
-    "https://img.itch.zone/aW1hZ2UvMTgwMDAyMC8xMjUyNTAzNC5wbmc=/original/7AhOqt.png";
-  const CampaignsUrl =
+    "https://img.itch.zone/aW1hZ2UvMTgwMDAyMC8xMjUyNTAzNC5wbmc=/794x1000/M86WyS.png";
+  const MatchVersusScreenUrl =
     "https://img.itch.zone/aW1hZ2UvMTgwMDAyMC8xMjUyNTAzMi5wbmc=/original/FpEpMj.png";
   const tournamentsUrl =
     "https://img.itch.zone/aW1hZ2UvMTgwMDAyMC8xMjUyNTAzMy5wbmc=/original/RvWaD5.png";
   const createPlayerUrl =
-    "https://img.itch.zone/aW1hZ2UvMTgwMDAyMC8xMjc5Njk2Ni5wbmc=/original/48W1GC.png";
+    "https://img.itch.zone/aW1hZ2UvMTgwMDAyMC8xMzM3NDA4MS5wbmc=/794x1000/4eWR6y.png";
   const puzzlesUrl =
-    "https://img.itch.zone/aW1hZ2UvMTgwMDAyMC8xMjUyNTAzMS5wbmc=/original/O5GlvZ.png";
+    "https://img.itch.zone/aW1hZ2UvMTgwMDAyMC8xMzM3NDA4Mi5wbmc=/794x1000/QFjQNk.png";
   const BRANEIconUrl = require("@site/static/img/BRANE.png").default;
   return (
     <div className={styles.centralAlign}>
@@ -94,19 +94,19 @@ export default function Home(): JSX.Element {
           </div>
           <div style={{ display: "flex", maxWidth: "100%" }}>
             <div>
-              <a href={tournamentsUrl} target="_blank">
+              <a href={createPlayerUrl} target="_blank">
                 <img
                   style={{ margin: "auto" }}
-                  src={tournamentsUrl}
+                  src={createPlayerUrl}
                   alt="Tournaments Screenshot"
                 ></img>
               </a>
             </div>
             <div>
-              <a href={CampaignsUrl} target="_blank">
+              <a href={puzzlesUrl} target="_blank">
                 <img
                   style={{ margin: "auto" }}
-                  src={CampaignsUrl}
+                  src={puzzlesUrl}
                   alt="Campaigns Screenshot"
                 ></img>
               </a>
@@ -114,13 +114,16 @@ export default function Home(): JSX.Element {
           </div>
           <div style={{ display: "flex", width: "100%" }}>
             <div style={{ margin: "auto", width: "50%" }}>
-              <a href={createPlayerUrl} target="_blank">
-                <img src={createPlayerUrl} alt="Create Player Screenshot"></img>
+              <a href={MatchVersusScreenUrl} target="_blank">
+                <img
+                  src={MatchVersusScreenUrl}
+                  alt="Create Player Screenshot"
+                ></img>
               </a>
             </div>
             <div style={{ margin: "auto", width: "50%" }}>
-              <a href={puzzlesUrl} target="_blank">
-                <img src={puzzlesUrl} alt="Puzzles Screenshot"></img>
+              <a href={tournamentsUrl} target="_blank">
+                <img src={tournamentsUrl} alt="Puzzles Screenshot"></img>
               </a>
             </div>
           </div>
@@ -130,7 +133,7 @@ export default function Home(): JSX.Element {
             Bosnia and Herzegovina, currently living and working in Germany.
             With some award winning game jam games and a lot more semi-finished
             nothing winning games on his portfolio he is the solo developer of
-            the exciting chess management game - Master of Chess.
+            the exciting chess career simulation game - Master of Chess.
           </span>
           <h1>Assets</h1>
           <div style={{ display: "flex", flexWrap: "wrap" }}>
@@ -140,45 +143,47 @@ export default function Home(): JSX.Element {
               alt="Master of chess icon"
             ></img>
             <img
-              style={{ margin: "auto" }}
+              style={{ margin: "auto", padding: "16px" }}
               src={MasterOfChessSmallBannerUrl}
               alt="Master of chess icon"
             ></img>
             <img
-              style={{ margin: "auto" }}
+              style={{ margin: "auto", padding: "16px" }}
               src={BRANEIconUrl}
               alt="Master of chess icon"
             ></img>
+            <div style={{ display: "flex", padding: "16px" }}>
+              <img
+                style={{ margin: "auto", maxWidth: "50%", padding: "16px" }}
+                src={
+                  require("@site/static/img/master_of_chess/title2.png").default
+                }
+                alt="Master of chess title 2"
+              ></img>
+              <img
+                style={{ margin: "auto", maxWidth: "50%", padding: "16px" }}
+                src={
+                  require("@site/static/img/master_of_chess/title1.png").default
+                }
+                alt="Master of chess title 1"
+              ></img>
+            </div>
             <img
-              style={{ margin: "auto" }}
-              src={
-                require("@site/static/img/master_of_chess/title2.png").default
-              }
-              alt="Master of chess title 2"
-            ></img>
-            <img
-              style={{ margin: "auto" }}
-              src={
-                require("@site/static/img/master_of_chess/title1.png").default
-              }
-              alt="Master of chess title 1"
-            ></img>
-            <img
-              style={{ margin: "auto" }}
+              style={{ margin: "auto", padding: "16px" }}
               src={
                 require("@site/static/img/master_of_chess/master.png").default
               }
               alt="Master of chess"
             ></img>
             <img
-              style={{ margin: "auto" }}
+              style={{ margin: "auto", padding: "16px" }}
               src={require("@site/static/img/master_of_chess/bg.png").default}
               alt="background"
             ></img>
             <img
-              style={{ margin: "auto" }}
+              style={{ margin: "auto", padding: "16px" }}
               src={
-                require("@site/static/img/master_of_chess/banner.png").default
+                require("@site/static/img/master_of_chess/banner.jpg").default
               }
               alt="background"
             ></img>
