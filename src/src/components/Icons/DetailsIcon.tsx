@@ -12,7 +12,7 @@ export const DetailsIcon = (props: any) => {
         width="40px"
         height="40px"
         viewBox="0 0 128 128"
-        enable-background="new 0 0 128 128"
+        enableBackground="new 0 0 128 128"
       >
         <path d="M103.091,114.145v-0.031c-0.013,0.012-0.026,0.021-0.039,0.031H103.091z" />
         <linearGradient

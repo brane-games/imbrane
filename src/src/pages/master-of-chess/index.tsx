@@ -69,7 +69,7 @@ export default function Home(): JSX.Element {
           <h1>Video Trailer</h1>
           <iframe
             className={styles.youtubeVideo}
-            src="https://www.youtube.com/embed/Pn2WeNB9b90"
+            src="https://www.youtube.com/embed/ivoAyILPGIQ"
           ></iframe>
           <h1>Screenshots</h1>
           <div style={{ display: "flex", maxWidth: "100%" }}>

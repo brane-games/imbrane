@@ -104,7 +104,7 @@ export default function CurrentFocus(): JSX.Element {
           <div className={clsx("col col--6") + " text--center"}>
             <iframe
               className={styles.youtubeVideo}
-              src="https://www.youtube.com/embed/Pn2WeNB9b90"
+              src="https://www.youtube.com/embed/ivoAyILPGIQ"
             ></iframe>
           </div>
         </div>
