@@ -36,7 +36,3 @@ First and foremost I'm looking into creating an alpha build of MoC. There's plen
 Secondly, **I'm working on releasing a completely free app about chess opening repertoire creation**. When folks saw the opening graph screenshots, a lot of comments were about how they would be interested in something like that, even if it was standalone. Now they can have it!
 
 So a lot more work left. Check out the new demo and let me know what you think!
-
-Heya! By this time next week there's going to be a new version of the Demo out.
-
-What's great about it? The game will be translated in couple of languages! MoC community stepped in and it seems we'll have the game translated to (at least) Russian, Polish, Swedish, Portuguese, French, Serbian, Vietnamese and German!
