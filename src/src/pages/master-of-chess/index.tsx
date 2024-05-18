@@ -9,17 +9,21 @@ export default function Home(): JSX.Element {
   const MasterOfChessIconUrl =
     require("@site/static/img/master_of_chess/master_of_chess_icon.png").default;
   const MatchScreenshotUrl =
-    "https://img.itch.zone/aW1hZ2UvMTgwMDAyMC8xMzM3NDA4NS5wbmc=/794x1000/MoJz95.png";
+    "https://img.itch.zone/aW1hZ2UvMTgwMDAyMC8xNTQ3MDQ0NS5wbmc=/original/Xm0dkp.png";
   const OpeningsUrl =
-    "https://img.itch.zone/aW1hZ2UvMTgwMDAyMC8xMjUyNTAzNC5wbmc=/794x1000/M86WyS.png";
+    "https://img.itch.zone/aW1hZ2UvMTgwMDAyMC8xNTQ3MDQ0OC5wbmc=/original/bOd0gf.png";
   const MatchVersusScreenUrl =
-    "https://img.itch.zone/aW1hZ2UvMTgwMDAyMC8xMjUyNTAzMi5wbmc=/original/FpEpMj.png";
+    "https://img.itch.zone/aW1hZ2UvMTgwMDAyMC8xNTQ3MDQ0NC5wbmc=/original/t2Cprv.png";
+  const matchAnalysisUrl =
+    "https://img.itch.zone/aW1hZ2UvMTgwMDAyMC8xNTQ3MDQ0OS5wbmc=/original/8cWhg0.png";
   const tournamentsUrl =
-    "https://img.itch.zone/aW1hZ2UvMTgwMDAyMC8xMjUyNTAzMy5wbmc=/original/RvWaD5.png";
+    "https://img.itch.zone/aW1hZ2UvMTgwMDAyMC8xNTQ3MDQ0My5wbmc=/original/G%2BwwHR.png";
+  const tournamentDetailsUrl =
+    "https://img.itch.zone/aW1hZ2UvMTgwMDAyMC8xNTQ3MDQ0Mi5wbmc=/original/x76gQU.png";
   const createPlayerUrl =
-    "https://img.itch.zone/aW1hZ2UvMTgwMDAyMC8xMzM3NDA4MS5wbmc=/794x1000/4eWR6y.png";
+    "https://img.itch.zone/aW1hZ2UvMTgwMDAyMC8xNTQ3MDUxMi5wbmc=/original/AWGz31.png";
   const puzzlesUrl =
-    "https://img.itch.zone/aW1hZ2UvMTgwMDAyMC8xMzM3NDA4Mi5wbmc=/794x1000/QFjQNk.png";
+    "https://img.itch.zone/aW1hZ2UvMTgwMDAyMC8xNTQ3MDQ0Ni5wbmc=/original/3d9PQS.png";
   const BRANEIconUrl = require("@site/static/img/BRANE.png").default;
   return (
     <div className={styles.centralAlign}>
@@ -33,10 +37,9 @@ export default function Home(): JSX.Element {
         <h1>Description</h1>
         <span>
           <b>Master of Chess</b> is a first & only chess career simulation game.
-          Compete against the world’s best players, join tournaments world-wide,
-          conquer grandmaster-rated AI opponents, solve tactical puzzles to
-          accelerate your development, create a powerful opening repertoire and…
-          blunder occasionally - it’s part of the game!
+          Become a world chess champion, join tournaments world-wide, conquer
+          grandmaster-rated AI opponents, solve chess puzzles, create a powerful
+          opening repertoire and… blunder occasionally - it’s part of the game!
         </span>
 
         <h1>Factsheet</h1>
@@ -46,10 +49,10 @@ export default function Home(): JSX.Element {
               <b>Developer: </b> BRANE
             </li>
             <li>
-              <b>Release Date: </b> 2023, Q4
+              <b>Release Date: </b>12th June 2024
             </li>
             <li>
-              <b>Genre: </b> Chess, Simulation, Management
+              <b>Genre: </b> Simulation, Management, Chess
             </li>
             <li>
               <b>Platforms: </b> Windows and Linux
@@ -124,6 +127,21 @@ export default function Home(): JSX.Element {
             <div style={{ margin: "auto", width: "50%" }}>
               <a href={tournamentsUrl} target="_blank">
                 <img src={tournamentsUrl} alt="Puzzles Screenshot"></img>
+              </a>
+            </div>
+          </div>
+          <div style={{ display: "flex", width: "100%" }}>
+            <div style={{ margin: "auto", width: "50%" }}>
+              <a href={tournamentDetailsUrl} target="_blank">
+                <img
+                  src={tournamentDetailsUrl}
+                  alt="Create Player Screenshot"
+                ></img>
+              </a>
+            </div>
+            <div style={{ margin: "auto", width: "50%" }}>
+              <a href={matchAnalysisUrl} target="_blank">
+                <img src={matchAnalysisUrl} alt="Puzzles Screenshot"></img>
               </a>
             </div>
           </div>
