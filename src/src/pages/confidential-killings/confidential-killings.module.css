@@ -1,0 +1,39 @@
+.hiddenBg {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  z-index: -1;
+  height: 3000px;
+  color: var(--ifm-heading-color);
+  background-color: #121212;
+  background-image: url("https://img.itch.zone/aW1nLzEzMzc0MDgwLnBuZw==/original/zoDYSe.png");
+  background-blend-mode: soft-light;
+}
+
+.centralAlign {
+  text-align: left;
+  background-color: #090909;
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--ifm-heading-color);
+}
+
+.content {
+  padding: 20px;
+}
+
+.centralAlign h1 {
+  color: #ffffff !important;
+  padding-top: 16px;
+}
+
+.img-wrapper {
+  margin: 8px;
+}
+
+.youtubeVideo {
+  aspect-ratio: 16 / 9;
+  height: auto;
+  width: 100%;
+}
