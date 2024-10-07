@@ -15,20 +15,14 @@ function HomepageHeader() {
               src="/img/imbrane.png"
             />
           </h1>
-          <h3>I make games.</h3>
           <a className={styles.myBlogLink} href="/blog">
             <BookIcon width="40px" color={"var(--ifm-heading-color)"} />
             <span style={{ marginLeft: "16px", marginBottom: "8px" }}>
               My blog
             </span>
           </a>
+          <h3>I make games.</h3>
         </div>
-        {/* <p>Right now, that's <span style={{ fontWeight: 600 }}>👑 Master Of Chess ⬅️.</span></p> */}
-        <img
-          style={{ margin: "auto" }}
-          className={clsx("img--primary", styles.imgPrimary)}
-          src="/img/avatar.png"
-        />
       </div>
     </header>
   );
