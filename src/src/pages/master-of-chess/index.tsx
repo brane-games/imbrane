@@ -151,7 +151,7 @@ export default function Home(): JSX.Element {
             Bosnia and Herzegovina, currently living and working in Germany.
             With some award winning game jam games and a lot more semi-finished
             nothing winning games on his portfolio he is the solo developer of
-            the exciting chess career simulation game - Master of Chess.
+            exciting chess career simulation game - Master of Chess.
           </span>
           <h1>Assets</h1>
           <div style={{ display: "flex", flexWrap: "wrap" }}>
