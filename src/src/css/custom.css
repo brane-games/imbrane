@@ -9,6 +9,7 @@
   --ifm-color-content-secondary: #99aaaa !important;
   --ifm-color-primary: #1d171c;
   --ifm-font-color-base: var(--ifm-color-primary);
+  --ifm-blockquote-color: var(--ifm-color-primary);
   --ifm-color-primary-dark: #687a68;
   --ifm-color-primary-darker: #277148;
   --ifm-color-primary-darkest: #205d3b;
@@ -21,6 +22,9 @@
   --ifm-navbar-link-hover-color: var(--ifm-link-color);
   --ifm-navbar-background-color: var(--ifm-color-primary-dark);
   --ifm-code-font-size: 95%;
+  --ifm-blockquote-padding-vertical: 1rem;
+  --ifm-blockquote-font-size: 1.1rem;
+  --ifm-blockquote-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.5);
   min-width: 320px;
 }
