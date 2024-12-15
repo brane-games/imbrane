@@ -15,8 +15,7 @@
 .heroBanner {
   padding: 0;
   padding-top: 2rem;
-  min-height: 60px;
-  height: 100%;
+  min-height: 160px;
   text-align: center;
   position: relative;
   display: flex;
@@ -27,6 +26,7 @@
 
 .imbrane {
   min-height: 80px;
+  margin: 20px;
 }
 
 .imgPrimary {
@@ -89,8 +89,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem 0;
+  padding: 2rem 2rem;
   width: 100%;
-  color: var(--ifm-color-primary);
-  background-color: var(--ifm-heading-color);
 }

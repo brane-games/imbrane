@@ -7,16 +7,16 @@
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-content-secondary: #99aaaa !important;
-  --ifm-color-primary: #1d171c;
+  --ifm-color-primary: #e9ebec;
   --ifm-font-color-base: var(--ifm-color-primary);
   --ifm-blockquote-color: var(--ifm-color-primary);
-  --ifm-color-primary-dark: #687a68;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-heading-color: #e9ebec;
+  --ifm-color-primary-dark: #2b2c29;
+  --ifm-color-primary-darker: #929436;
+  --ifm-color-primary-darkest: #ad9650;
+  --ifm-color-primary-light: #e1c984;
+  --ifm-color-primary-lighter: #dfcb92;
+  --ifm-color-primary-lightest: #f1e5c1;
+  --ifm-heading-color: #1d171c;
   --ifm-footer-background-color: var(--ifm-color-primary-dark);
   --ifm-link-color: #dcd3c2;
   --ifm-navbar-link-hover-color: var(--ifm-link-color);
@@ -24,13 +24,29 @@
   --ifm-code-font-size: 95%;
   --ifm-blockquote-padding-vertical: 1rem;
   --ifm-blockquote-font-size: 1.1rem;
+  --ifm-heading-font-family: 'CustomFont'
   --ifm-blockquote-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.5);
   min-width: 320px;
 }
 
+@font-face {
+  font-family: 'CustomFont';
+  src: url('/font/DepartureMono-Regular.woff2') format('woff2'),
+       url('/font/DepartureMono-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 #_docusaurus {
   height: 100%;
+}
+#__docusaurus {
+  height: 100%;
+}
+
+body {
+  font-family: 'CustomFont', sans-serif;
 }
 
 .container {
@@ -48,7 +64,7 @@
   background-color: var(--ifm-color-primary-dark);
 }
 a {
-  color: var(--ifm-color-primary-dark);
+  color: var(--ifm-color-primary-light);
   font-weight: bold;
 }
 .navbar__toggle {
@@ -66,7 +82,7 @@ h1,
 h2,
 h3,
 h4 {
-  color: var(--ifm-color-primary-dark) !important;
+  color: var(--ifm-color-primary-lightest) !important;
 }
 .table-of-contents__link--active {
   color: var(--ifm-color-primary-dark) !important;

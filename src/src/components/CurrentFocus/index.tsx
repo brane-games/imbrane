@@ -10,105 +10,11 @@ export default function CurrentFocus(): JSX.Element {
 
   return (
     <section className={styles.features}>
-      <div className={"container " + styles.features}>
-        <div className={"row"}>
-          <div className={clsx("col col--6") + " text--center"}>
-            <div className={styles.focusColumn}>
-              <div>
-                <img
-                  className={styles.featureSvg}
-                  role="img"
-                  src={MasterOfChessIconUrl}
-                />
-              </div>
-              <div
-                className={"text--center padding-horiz--md " + styles.focusDesc}
-              >
-                <h1 className={styles.darkText}>Master of Chess</h1>
-                <p
-                  style={{
-                    maxWidth: "500px",
-                    margin: "auto",
-                    paddingBottom: "12px",
-                  }}
-                >
-                  I am currently working on my dream chess career simulation
-                  game.
-                </p>
-              </div>
-              <div
-                style={{
-                  width: "200px",
-                  margin: "auto",
-                  display: "flex",
-                  flexDirection: "column",
-                  paddingRight: "16px",
-                }}
-              >
-                <a
-                  href="https://store.steampowered.com/app/2248900/Master_of_Chess"
-                  target={"_blank"}
-                >
-                  <button
-                    style={{ margin: "auto", marginTop: "0px", height: "70px" }}
-                    className={styles.button}
-                  >
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "center",
-                        margin: "auto",
-                        width: "130px",
-                      }}
-                    >
-                      <SteamIconLogo
-                        style={{
-                          height: "40px",
-                        }}
-                        role="img"
-                      />
-                      <span style={{ margin: "auto" }}>Wishlist</span>
-                    </div>
-                  </button>
-                </a>
-                <button
-                  style={{ margin: "auto", marginTop: "0px", height: "70px" }}
-                  className={styles.button}
-                  onClick={() => {
-                    (window as any).location =
-                      window.location + "master-of-chess";
-                  }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      margin: "auto",
-                      width: "130px",
-                    }}
-                  >
-                    <DetailsIcon
-                      style={{
-                        height: "40px",
-                      }}
-                      role="img"
-                    />
-                    <span style={{ margin: "auto", marginLeft: "8px" }}>
-                      Presskit
-                    </span>
-                  </div>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className={clsx("col col--6") + " text--center"}>
-            <iframe
-              className={styles.youtubeVideo}
-              src="https://www.youtube.com/embed/ivoAyILPGIQ"
-            ></iframe>
-          </div>
-        </div>
-      </div>
+      <p>♟️ In 2024 I've released Master of Chess to Steam Early Access. <a href="https://store.steampowered.com/app/2248900/Master_of_Chess/">Link to Steam</a> / <a href="/master-of-chess">Link to presskit</a></p> 
+      <p>📕 You can check out my blog here. <a href="/blog">Link to blog</a></p>
+      <p>🔵 Sometimes I post on socials: <a href="https://twitter.com/GamesBrane">X</a> / <a href="https://bsky.app/profile/branegames.bsky.social">Bluesky</a></p>
+      <p>🫂 Connect with me on my Discord Channel: <a href="https://discord.gg/HYV8Zz8V2Q">Link to Discord</a></p>
+      <p>🕹️ Check out my other games on itch.io <a href="https://branegames.itch.io/">Link to itch.io</a></p>
     </section>
   );
 }
