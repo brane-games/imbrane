@@ -1,16 +1,8 @@
 .centered {
-    width: 100%;
     color: var(--ifm-color-primary);
     display: flex;
-    justify-content: center;
   }
-
-  .container {
-    background-color: var(--ifm-color-primary-dark);
-    margin:12px;
-    border-radius: 8px;
-    padding: 24px;
-  }
+ 
   
   .button {
     border: 1px solid var(--ifm-color-primary-light);

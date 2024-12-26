@@ -18,8 +18,8 @@ export default function EmailSubscription(): JSX.Element {
 
     return (
         <section className={styles.centered}>
-            <div className={styles.container}>
-                <p>Subscribe to BRANE newsletter.</p>
+            <div >
+                <span>Subscribe to BRANE newsletter.</span>
                 <div style={{ display: "flex", alignItems: "center" }}>
                     <input
                         type="email"
