@@ -2,7 +2,7 @@ import React from "react";
 import clsx from "clsx";
 import styles from "./index.module.css";
 import CurrentFocus from "../components/CurrentFocus";
-import { BookIcon } from "../components/Icons/BookIcon";
+import EmailSubscription from "../components/EmailSubscription";
 
 function HomepageHeader() {
   return (
@@ -29,6 +29,7 @@ export default function Home(): JSX.Element {
       <main style={{"flex": 1}}>
         <div className={styles.indexContent}>
           <CurrentFocus />
+          <EmailSubscription />
         </div>
       </main>
       <div style={{ "height": 70, "padding": 20, "display": 'flex', "justifyContent": 'center' }}>BRANE | 2024</div>

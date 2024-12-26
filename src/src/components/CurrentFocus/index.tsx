@@ -1,13 +1,7 @@
 import React from "react";
-import clsx from "clsx";
 import styles from "./styles.module.css";
-import { DetailsIcon } from "../Icons/DetailsIcon";
 
 export default function CurrentFocus(): JSX.Element {
-  const MasterOfChessIconUrl =
-    require("@site/static/img/master_of_chess/master_of_chess_icon.png").default;
-  const SteamIconLogo = require("@site/static/img/Steam_icon_logo.svg").default;
-
   return (
     <section className={styles.features}>
       <p>♟️ In 2024 I've released Master of Chess to Steam Early Access. <a href="https://store.steampowered.com/app/2248900/Master_of_Chess/">Link to Steam</a> / <a href="/master-of-chess">Link to presskit</a></p> 
